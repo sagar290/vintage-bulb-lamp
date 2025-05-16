@@ -100,6 +100,21 @@
     .feature p {
       color: #ccc;
     }
+    .video-card {
+      margin-top: 60px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 204, 102, 0.2);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+    .video-card video {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 204, 102, 0.4);
+    }
   </style>
 </head>
 <body>
@@ -130,6 +145,14 @@
         <h3>দারুণ উপহার</h3>
         <p>ছাত্রছাত্রী, সৃষ্টিশীল মানুষ, বা যেকোনো ব্যতিক্রমী ডিজাইন প্রেমীদের জন্য উপযুক্ত উপহার।</p>
       </div>
+    </div>
+
+    <div class="video-card">
+      <h2 style="color: #ffcc66; margin-bottom: 20px;">পণ্যের ভিডিও</h2>
+      <video controls poster="/mnt/data/472006296_1542061879839407_8589020609399638160_n.jpg">
+        <source src="https://gv.videocdn.alibaba.com/icbu_vod_video/video_target/gv95-08fd070c-a1b5689c-94edfa1a-0364/trans/aidc/qytmzf-h264-sd.mp4?bizCode=icbu_vod_video" type="video/mp4">
+        আপনার ব্রাউজার ভিডিওটি চালাতে সক্ষম নয়।
+      </video>
     </div>
   </div>
 </body>
