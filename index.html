@@ -177,6 +177,15 @@
       text-decoration: underline;
     }
   </style>
+<script>
+    function updateTotalPrice() {
+        const quantity = document.getElementById("quantity").value;
+        const pricePerItem = 500;
+        const total = quantity * pricePerItem;
+        document.getElementById("totalPrice").innerText = `মোট মূল্য: BDT ${total}`;
+        document.getElementById("totalPriceValue").value = total;
+    }
+    </script>
 </head>
 <body>
   <div class="container">
@@ -223,6 +232,8 @@
     <div id="buy" class="buy-section">
         <h2>এখনই অর্ডার করুন</h2>
         <p>আপনার অর্ডার কনফার্ম করতে নিচের ফর্মটি পূরণ করুন।</p>
+        
+        <div class="price-display" id="totalPrice">মোট মূল্য: BDT 500</div>
         <form action="https://formspree.io/f/mpwdblnn" method="POST">
           <label for="name">নাম:</label>
           <input type="text" id="name" name="name" required>
@@ -234,8 +245,15 @@
           <textarea id="address" name="address" rows="3" required></textarea>
   
           <label for="quantity">পরিমাণ:</label>
-          <input type="number" id="quantity" name="quantity" value="1" min="1" required>
-  
+          <input type="number" id="quantity" name="quantity" value="1" min="1" required onchange="updateTotalPrice()">
+
+          <label for="payment">পেমেন্ট পদ্ধতি:</label>
+          <select id="payment" name="payment" required>
+            <option value="cash_on_delivery">ক্যাশ অন ডেলিভারি</option>
+            <!-- <option value="bkash">বিকাশ</option>
+            <option value="nagad">নগদ</option> -->
+          </select>
+          <input type="hidden" id="totalPriceValue" name="totalPrice" value="500">
           <button type="submit" class="btn">অর্ডার কনফার্ম করুন</button>
         </form>
     </div>
